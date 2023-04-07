@@ -15,7 +15,7 @@ end
 local function isWhitelisted(id)
     local isWhitelisted = false
     local license = QBCore.Functions.GetIdentifier(id, 'license')
-    local result = MySQL.Sync.fetchAll('SELECT * FROM underattack_ignore_players WHERE license = ?', {license})
+    local result = MySQL.Sync.fetchAll('SELECT * FROM ignore_players WHERE license = ?', {license})
     if result[1] ~= nil and result[1].license == license then isWhitelisted = true end
     return isWhitelisted
 end
