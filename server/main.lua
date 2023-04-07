@@ -126,7 +126,7 @@ QBCore.Commands.Add("unprotect", "Remove protected player", {{name='ID', help='T
             if Player then
                 local name = Player.PlayerData.charinfo.firstname ..' '.. Player.PlayerData.charinfo.lastname
                 local license = QBCore.Functions.GetIdentifier(id, 'license')
-                MySQL.Async.fetchAll("SELECT * FROM underattack_ignore_players WHERE license = ?", {license}, function(rs)
+                MySQL.Async.fetchAll("SELECT * FROM ignore_players WHERE license = ?", {license}, function(rs)
                     if type(rs) == 'table' and #rs > 0 then
                         MySQL.Async.execute('DELETE FROM ignore_players WHERE license = ?', {license})
                         TriggerClientEvent('QBCore:Notify', source, name.." is removed as protected user" , "success")
