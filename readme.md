@@ -61,6 +61,8 @@ cause you send to many requests, so keep in mind that you don't flood your disco
 # Admin Commands
 - 1. /screenshot [id] (admin access only)
 - 2. /screenshotmenu (admin access only)
+- 3. /protect [id] this wil ignore players for auto screenshots
+- 4. /unprotect [id] this trmoves the plyer from theignore list
 
 # User Command
 - 1. /makescreenshot (user access with a cooldown)
