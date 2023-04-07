@@ -61,11 +61,11 @@ end
 local function GetOnlinePlayers()
     local sources = {}	
     for k, id in pairs(QBCore.Functions.GetPlayers()) do
-		local target = QBCore.Functions.GetPlayer(id)
-		local info = {
-			source = target.PlayerData.source,
-			fullname = target.PlayerData.charinfo.firstname.." "..target.PlayerData.charinfo.lastname,
-		}
+	local target = QBCore.Functions.GetPlayer(id)
+	local info = {
+	    source = target.PlayerData.source,
+	    fullname = target.PlayerData.charinfo.firstname.." "..target.PlayerData.charinfo.lastname,
+	}
         sources[#sources+1] = info
     end
     return sources
@@ -94,21 +94,21 @@ QBCore.Commands.Add("screenshotmenu", "", {}, true, function(source)
 end, 'admin')
 
 QBCore.Functions.CreateCallback("mh-screenshots:server:getWekhook", function(source, cb)
-	cb(DiscordWebhook.Logs)
+    cb(DiscordWebhook.Logs)
 end)
 
 QBCore.Functions.CreateCallback("mh-screenshots:server:isAdmin", function(source, cb)
     local src = source
-	cb(isAdmin(src), scr)
+    cb(isAdmin(src), scr)
 end)
 
 QBCore.Functions.CreateCallback("mh-screenshots:server:isWhitelisted", function(source, cb)
     local src = source
-	cb(isWhitelisted(src))
+    cb(isWhitelisted(src))
 end)
 
 QBCore.Functions.CreateCallback("mh-screenshots:server:GetOnlinePlayers", function(source, cb)
-	cb(GetOnlinePlayers())
+    cb(GetOnlinePlayers())
 end)
 
 RegisterServerEvent('mh-screenshots:server:screenshot', function()
