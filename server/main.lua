@@ -93,6 +93,52 @@ QBCore.Commands.Add("screenshotmenu", "", {}, true, function(source)
     TriggerClientEvent('mh-screenshots:client:ShowMenu', src)
 end, 'admin')
 
+
+QBCore.Commands.Add("protect", "Add as protected player", {{name='ID', help='The ID of the player you want to add.'}}, true, function(source, args)
+	local src = source
+    if IsPlayerAceAllowed(src, 'admin') or IsPlayerAceAllowed(src, 'god') or IsPlayerAceAllowed(src, 'command') then
+        if args[1] and tonumber(args[1]) > 0 then
+            local id = tonumber(args[1])
+            local Player = QBCore.Functions.GetPlayer(id)
+            if Player then
+                local license = QBCore.Functions.GetIdentifier(id, 'license')
+                local name = Player.PlayerData.charinfo.firstname ..' '.. Player.PlayerData.charinfo.lastname
+                MySQL.Async.fetchAll("SELECT * FROM ignore_players WHERE license = ?", {license}, function(rs)
+                    if type(rs) == 'table' and #rs > 0 then
+                        TriggerClientEvent('QBCore:Notify', source, "[mh-antiattack] - "..name.." is already a protected user", "error")
+                    else
+                        MySQL.Async.execute("INSERT INTO ignore_players (citizenname, license) VALUES (?, ?)", {name, license})
+                        TriggerClientEvent("QBCore:Notify", source, "[mh-antiattack] - "..name.." is added as protected user", "success")
+                        TriggerClientEvent("QBCore:Notify", Player.PlayerData.source, "[mh-antiattack] - ".. name.." you have been added as protected user.", "success")
+                    end
+                end)
+            end
+        end
+    end
+end, 'admin')
+
+QBCore.Commands.Add("unprotect", "Remove protected player", {{name='ID', help='The id of the player you want to remove.'}}, true, function(source, args)
+	local src = source
+    if IsPlayerAceAllowed(src, 'admin') or IsPlayerAceAllowed(src, 'god') or IsPlayerAceAllowed(src, 'command') then
+        if args[1] and tonumber(args[1]) > 0 then
+            local id = tonumber(args[1])
+            local Player = QBCore.Functions.GetPlayer(id)
+            if Player then
+                local name = Player.PlayerData.charinfo.firstname ..' '.. Player.PlayerData.charinfo.lastname
+                local license = QBCore.Functions.GetIdentifier(id, 'license')
+                MySQL.Async.fetchAll("SELECT * FROM underattack_ignore_players WHERE license = ?", {license}, function(rs)
+                    if type(rs) == 'table' and #rs > 0 then
+                        MySQL.Async.execute('DELETE FROM ignore_players WHERE license = ?', {license})
+                        TriggerClientEvent('QBCore:Notify', source, name.." is removed as protected user" , "success")
+                    else
+                        TriggerClientEvent('QBCore:Notify', source, "protected user not found...", "error")
+                    end
+                end)
+            end
+        end
+    end
+end, 'admin')
+
 QBCore.Functions.CreateCallback("mh-screenshots:server:getWekhook", function(source, cb)
     cb(DiscordWebhook.Logs)
 end)
