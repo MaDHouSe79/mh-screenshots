@@ -40,7 +40,7 @@ cause you send to many requests, so keep in mind that you don't flood your disco
 # Dependencies
 - [oxmysql](https://github.com/overextended/oxmysql)
 - [qb-core](https://github.com/qbcore-framework/qb-core)
-- [interact-sound](https://github.com/qbcore-framework/interact-sound)
+- [screenshot-basic](https://github.com/citizenfx/screenshot-basic)
 
 <p align="center">
   <img alig src="https://raw.githubusercontent.com/kamranahmedse/driver.js/master/demo/images/split.png" />
