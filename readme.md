@@ -55,7 +55,7 @@ cause you send to many requests, so keep in mind that you don't flood your disco
 
 # Admin F1 Menu
 - 1. Open Menu
-- 2. Screenshto all
+- 2. Screenshot all
 - 3. Screenshot your self.
 
 # Admin Commands
