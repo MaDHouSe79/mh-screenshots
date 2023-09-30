@@ -22,9 +22,6 @@
   </a>      
 </p>
 
-<p align="center">
-  <img alig src="https://github-profile-trophy.vercel.app/?username=MaDHouSe79&margin-w=15&column=6" />
-</p>
 
 # MH Screenshots (Admin Tool)
 This is a small admin tool, you can take a screenshot of any player screen and send this to your discord server,
@@ -33,25 +30,15 @@ this kind of things can be undetectable, with this you can take screenshots.
 keep in mind that if you make to much screenshots and send it to discord, discord can block it.
 cause you send to many requests, so keep in mind that you don't flood your discord channel.
 
-<p align="center">
-  <img alig src="https://raw.githubusercontent.com/kamranahmedse/driver.js/master/demo/images/split.png" />
-</p>
 
 # Dependencies
 - [oxmysql](https://github.com/overextended/oxmysql)
 - [qb-core](https://github.com/qbcore-framework/qb-core)
 - [screenshot-basic](https://github.com/citizenfx/screenshot-basic)
 
-<p align="center">
-  <img alig src="https://raw.githubusercontent.com/kamranahmedse/driver.js/master/demo/images/split.png" />
-</p>
 
 # To Add in **server.lua** file between line **3/6**
 - 1. 'DiscordWebhook' add your webhooks in here
-
-<p align="center">
-  <img alig src="https://raw.githubusercontent.com/kamranahmedse/driver.js/master/demo/images/split.png" />
-</p>
 
 # Admin F1 Menu
 - 1. Open Menu
@@ -67,15 +54,8 @@ cause you send to many requests, so keep in mind that you don't flood your disco
 # User Command
 - 1. /makescreenshot (user access with a cooldown)
 
-<p align="center">
-  <img alig src="https://raw.githubusercontent.com/kamranahmedse/driver.js/master/demo/images/split.png" />
-</p>
-
-## 🐞 Any bugs issues or suggestions, let my know. 👊😎
-
-## 🙈 Youtube & Discord
-- [Youtube](https://www.youtube.com/@MaDHouSe79) for videos
-- [Discord](https://discord.gg/cEMSeE9dgS)
+# 🙈 Youtube
+- [Youtube](https://www.youtube.com/c/MaDHouSe79)
 
 # LICENSE
 [GPL LICENSE](./LICENSE)<br />
