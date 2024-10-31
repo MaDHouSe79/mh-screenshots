@@ -3,7 +3,7 @@ games { 'gta5' }
 
 author 'MaDHouSe'
 description 'MH Screenshots - a admin tool if you want to know what your players are doeing.'
-version '1.0'
+version '1.0.0'
 
 shared_scripts {
     '@qb-core/shared/locale.lua',
